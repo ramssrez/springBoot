@@ -1,10 +1,10 @@
-package com.ramssrez;
+package com.ramssrez.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoEntitiesApplicationTests {
+class DemoRelationsEntitiesApplicationTests {
 
 	@Test
 	void contextLoads() {

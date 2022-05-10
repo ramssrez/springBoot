@@ -1,13 +1,13 @@
-package com.ramssrez;
+package com.ramssrez.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoEntitiesApplication {
+public class DemoRelationsEntitiesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoEntitiesApplication.class, args);
+		SpringApplication.run(DemoRelationsEntitiesApplication.class, args);
 	}
 
 }
