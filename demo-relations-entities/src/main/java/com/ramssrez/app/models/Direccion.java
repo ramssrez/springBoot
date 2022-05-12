@@ -11,10 +11,15 @@ public class Direccion implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "calle")
+    @Column(name = "calle",nullable = false)
     private String calle;
 
-    @Column(name = "numero")
+    @Column(name = "codigo_postal", nullable = false)
+    private String codigoPostal;
+
+    @Column(name = "colonia", nullable = false)
+    private String colonia;
+
+    @Column(name = "numero", nullable = false)
     private String numero;
-    
 }
