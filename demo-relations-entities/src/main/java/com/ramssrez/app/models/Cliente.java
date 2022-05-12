@@ -10,10 +10,10 @@ public class Cliente {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "email", unique = true, length = 13)
+    @Column(name = "email", unique = true, length = 13, nullable = false)
     private String email;
 
-    @Column(name = "rfc", unique = true, length = 25)
+    @Column(name = "rfc", unique = true, length = 25,nullable = false)
     private String rfc;
 
     @Column(name = "nombre", length = 15)
