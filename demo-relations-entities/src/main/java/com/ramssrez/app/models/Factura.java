@@ -25,5 +25,10 @@ public class Factura {
     private BigDecimal total;
 
     @ManyToMany
+    @JoinTable(
+            name = "facturas_productos",
+            joinColumns = @JoinColumn(name = "factura_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "producto_id", referencedColumnName = "id")
+    )
     private List<Producto> productos;
 }
