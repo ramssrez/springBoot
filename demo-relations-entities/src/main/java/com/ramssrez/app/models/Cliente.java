@@ -7,16 +7,8 @@ import java.util.List;
 @Entity
 @Table(name = "clientes")
 public class Cliente implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //Genera un identificador al registro de la base de datos
-    @Column(name = "id")
-    private Long id;
-
-    @Column(name = "email", unique = true, length = 13, nullable = false)
-    private String email;
-
-    @Column(name = "rfc", unique = true, length = 25,nullable = false)
-    private String rfc;
+    @EmbeddedId
+    private ClientePK clientePK;
 
     @Column(name = "nombre", length = 15)
     private String nombre;
