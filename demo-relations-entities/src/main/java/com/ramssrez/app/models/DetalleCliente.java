@@ -18,4 +18,8 @@ public class DetalleCliente {
 
     @Column(name = "telefono", length = 10)
     private String telefono;
+
+    @OneToOne
+    @JoinColumn(name = "clientes_idx")
+    private Cliente cliente;
 }
