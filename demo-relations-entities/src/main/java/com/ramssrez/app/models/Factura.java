@@ -3,21 +3,13 @@ package com.ramssrez.app.models;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.List;
 
 @Entity
 @Table(name = "facturas")
 public class Factura implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "fecha_emision")
-    private LocalDate fechaEmisión;
-
-    @Column(name = "folio")
-    private String folio;
+    @EmbeddedId
+    private FacturaPK facturaPK;
 
     @Column(name = "descripcion")
     private String descripcion;
@@ -36,7 +28,10 @@ public class Factura implements Serializable {
     @ManyToMany
     @JoinTable(
             name = "facturas_productos",
-            joinColumns = @JoinColumn(name = "factura_id", referencedColumnName = "id"),
+            joinColumns = {
+                    @JoinColumn(name = "factura_folio", referencedColumnName = "folio"),
+                    @JoinColumn(name = "factura_fecha_emision", referencedColumnName = "fecha_emision")
+            },
             inverseJoinColumns = @JoinColumn(name = "producto_id", referencedColumnName = "id")
     )
     private List<Producto> productos;

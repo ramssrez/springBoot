@@ -22,7 +22,10 @@ public class Producto  implements Serializable {
     @JoinTable(
             name = "facturas_productos",
             joinColumns =@JoinColumn(name = "producto_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "factura_id", referencedColumnName = "id")
+            inverseJoinColumns = {
+                    @JoinColumn(name = "factura_folio", referencedColumnName = "folio"),
+                    @JoinColumn(name = "factura_fecha_emision", referencedColumnName = "fecha_emision")
+            }
     )
     private List<Factura> facturas;
 }
