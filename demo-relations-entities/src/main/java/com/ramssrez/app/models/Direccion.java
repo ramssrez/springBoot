@@ -22,4 +22,7 @@ public class Direccion implements Serializable {
 
     @Column(name = "numero", nullable = false)
     private String numero;
+
+    @OneToMany
+    private Persona persona;
 }
