@@ -24,6 +24,10 @@ public class Factura {
     @Column(name = "total")
     private BigDecimal total;
 
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
+
     @ManyToMany
     @JoinTable(
             name = "facturas_productos",
