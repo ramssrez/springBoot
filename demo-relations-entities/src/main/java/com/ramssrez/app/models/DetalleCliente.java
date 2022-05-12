@@ -19,7 +19,7 @@ public class DetalleCliente {
     @Column(name = "telefono", length = 10)
     private String telefono;
 
-    @OneToOne
-    @JoinColumn(name = "clientes_idx")
+    @OneToOne //Relación uno a uno
+    @JoinColumn(name = "clientes_idx") //Nombre de la llave foranea
     private Cliente cliente;
 }

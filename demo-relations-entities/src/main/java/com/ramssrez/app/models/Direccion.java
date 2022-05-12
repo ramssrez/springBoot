@@ -15,4 +15,7 @@ public class Direccion {
 
     @Column(name = "numero")
     private String numero;
+
+    @ManyToOne //Relación muchos a uno
+    private Cliente cliente;
 }
