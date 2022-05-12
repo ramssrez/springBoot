@@ -21,6 +21,10 @@ public class DetalleCliente implements Serializable {
     private String telefono;
 
     @OneToOne //Relación uno a uno
-    @JoinColumn(name = "clientes_idx") //Nombre de la llave foranea
+    @JoinColumns({
+            @JoinColumn(name = "cliente_email",referencedColumnName = "email"),
+            @JoinColumn(name = "cliente_rfc",referencedColumnName = "rfc")
+    })
+    //@JoinColumn(name = "clientes_idx") //Nombre de la llave foranea
     private Cliente cliente;
 }

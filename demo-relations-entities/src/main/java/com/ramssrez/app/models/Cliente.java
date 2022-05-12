@@ -16,7 +16,10 @@ public class Cliente implements Serializable {
     @Column(name = "apellido", length = 15)
     private String apellido;
 
-    //mappedBy hace referencia a la clave de la otra tabla, para este caso es el cliente de la dirección
-    @OneToMany(mappedBy = "cliente") //Relación uno a muchos, pero mapeado a cliente en direccion
+    @OneToMany
+    @JoinColumns({
+            @JoinColumn(name = "cliente_email", referencedColumnName = "email"),
+            @JoinColumn(name = "cliente_rfc", referencedColumnName = "rfc")
+    })
     private List<Direccion> direcciones;
 }

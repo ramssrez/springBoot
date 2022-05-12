@@ -26,7 +26,11 @@ public class Factura implements Serializable {
     private BigDecimal total;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id")
+    //@JoinColumn(name = "cliente_id")
+    @JoinColumns({
+            @JoinColumn(name = "cliente_email",referencedColumnName = "email"),
+            @JoinColumn(name = "cliente_rfc",referencedColumnName = "rfc")
+    })
     private Cliente cliente;
 
     @ManyToMany
