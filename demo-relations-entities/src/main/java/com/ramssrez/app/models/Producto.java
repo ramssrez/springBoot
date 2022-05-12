@@ -1,12 +1,13 @@
 package com.ramssrez.app.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
 @Table(name = "productos")
-public class Producto {
+public class Producto  implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
