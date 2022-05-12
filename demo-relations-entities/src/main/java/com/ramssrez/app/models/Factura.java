@@ -3,6 +3,7 @@ package com.ramssrez.app.models;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "facturas")
@@ -22,4 +23,7 @@ public class Factura {
 
     @Column(name = "total")
     private BigDecimal total;
+
+    @ManyToMany
+    private List<Producto> productos;
 }
