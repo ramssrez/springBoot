@@ -11,7 +11,7 @@ public class PuestoAdministrativo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "codigo_puesto", nullable = false, unique = false, length = 10)
+    @Column(name = "codigo_puesto", nullable = false, unique = true, length = 10)
     private String codigoPuesto;
 
     @Column(name = "descripcion")

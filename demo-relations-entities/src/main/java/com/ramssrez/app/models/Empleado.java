@@ -1,9 +1,6 @@
 package com.ramssrez.app.models;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -15,4 +12,7 @@ public class Empleado implements Serializable {
 
     @Column(name = "fecha_ingreso", nullable = false)
     private LocalDate fechaIngreso;
+
+    @OneToOne
+    private Persona persona;
 }
