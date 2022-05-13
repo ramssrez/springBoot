@@ -1,11 +1,12 @@
 package com.ramssrez.app.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "carreras")
-public class Carrera {
+public class Carrera implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

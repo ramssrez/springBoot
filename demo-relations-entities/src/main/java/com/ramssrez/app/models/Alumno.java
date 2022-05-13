@@ -1,11 +1,12 @@
 package com.ramssrez.app.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "alumnos")
-public class Alumno {
+public class Alumno implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
