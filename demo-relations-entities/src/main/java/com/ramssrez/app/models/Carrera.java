@@ -1,6 +1,7 @@
 package com.ramssrez.app.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "carreras")
@@ -18,4 +19,11 @@ public class Carrera {
     @Column(name = "nombre", nullable = false, length = 25)
     private String nombre;
 
+    @ManyToMany
+    @JoinTable(
+            name = "materias_carreras",
+            joinColumns = @JoinColumn(name = "carrera_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "materia_id", referencedColumnName = "id")
+    )
+    private List<Materia> materias;
 }
