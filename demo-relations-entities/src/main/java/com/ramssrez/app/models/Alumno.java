@@ -16,9 +16,16 @@ public class Alumno {
     @Column(name = "fecha_ingreso")
     private LocalDate fechaIngreso;
 
-    @Column(name = "numero_control", nullable = false)
+    @Column(name = "numero_control", nullable = false, unique = true, length = 10)
     private String numeroControl;
 
     @Column(name = "semestre", nullable = false)
     private Integer semestre;
+
+    @ManyToOne
+    private Carrera carrera;
+
+    @OneToOne
+    //@JoinColumn(name = "persona_id")
+    private Persona persona;
 }

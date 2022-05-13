@@ -10,13 +10,13 @@ public class Persona {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "apellido_materno")
+    @Column(name = "apellido_materno", length = 20)
     private String apellidoMaterno;
 
     @Column(name = "apellido_paterno", nullable = false,length = 20)
     private String apellidoPaterno;
 
-    @Column(name = "curp",nullable = false,length = 20)
+    @Column(name = "curp",nullable = false,length = 18, unique = true)
     private String curp;
 
     @Column(name = "fecha_nacimiento", nullable = false)
