@@ -27,4 +27,13 @@ public class Materia implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "carrera_id", referencedColumnName = "id")
     )
     private List<Carrera> carreras;
+
+    @ManyToMany
+    @JoinTable(
+            name = "materias_profesores",
+            joinColumns = @JoinColumn(name = "materia_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "profesor_id", referencedColumnName = "id")
+    )
+    private List<Profesor> profesores;
+
 }

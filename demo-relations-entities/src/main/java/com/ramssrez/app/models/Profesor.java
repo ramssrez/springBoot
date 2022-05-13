@@ -19,4 +19,12 @@ public class Profesor implements Serializable {
 
     @OneToOne
     private Cubiculo cubiculo;
+
+    @ManyToMany
+    @JoinTable(
+            name = "materias_profesores",
+            joinColumns = @JoinColumn(name = "profesor_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "materia_id", referencedColumnName = "id")
+    )
+    private List<Materia> materias;
 }
